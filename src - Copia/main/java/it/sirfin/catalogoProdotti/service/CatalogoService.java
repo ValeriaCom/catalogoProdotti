@@ -14,11 +14,11 @@ import java.util.List;
  */
 public interface CatalogoService {
     
-    List<Prodotto> leggiCatalogoCompleto();
+     List<Prodotto> leggiCatalogoCompleto();
 
     List<Prodotto> inserisciArticolo(Prodotto p);
 
-    List<Prodotto> cancellaProdotto(Prodotto p);
+    List<Prodotto> cancellaCatalogo(Prodotto p);
     
     List<Prodotto> svuotaCatalogo();
     

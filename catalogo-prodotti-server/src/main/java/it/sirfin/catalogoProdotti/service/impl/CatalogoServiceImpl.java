@@ -6,8 +6,11 @@
 package it.sirfin.catalogoProdotti.service.impl;
 
 import it.sirfin.catalogoProdotti.model.Prodotto;
+import it.sirfin.catalogoProdotti.repository.CatalogoRepository;
 import it.sirfin.catalogoProdotti.service.CatalogoService;
+import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -15,24 +18,32 @@ import java.util.List;
  */
 public class CatalogoServiceImpl implements CatalogoService{
 
+    @Autowired
+    CatalogoRepository catalogoRepository;
     @Override
     public List<Prodotto> leggiCatalogoCompleto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return catalogoRepository.findAll();
     }
 
     @Override
     public List<Prodotto> inserisciArticolo(Prodotto p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+       catalogoRepository.save(p);
+       return leggiCatalogoCompleto();
     }
 
     @Override
-    public List<Prodotto> cancellaCatalogo(Prodotto p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Prodotto> cancellaProdotto(Prodotto p) {
+        
+        catalogoRepository.delete(p);
+        return leggiCatalogoCompleto();
     }
 
     @Override
     public List<Prodotto> svuotaCatalogo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        catalogoRepository.deleteAllInBatch();
+              return new ArrayList<>();  
     }
     
 }

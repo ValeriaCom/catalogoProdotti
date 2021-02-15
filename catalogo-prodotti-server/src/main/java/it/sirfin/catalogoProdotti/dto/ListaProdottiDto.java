@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class ListaProdottiDto {
      private List<Prodotto> listaProdotti;
+    public Prodotto getProdotto;
 
     public List<Prodotto> getListaProdotti() {
         return listaProdotti;
@@ -33,6 +34,10 @@ public class ListaProdottiDto {
     @Override
     public String toString() {
         return "ListaProdottiDto{" + "listaProdotti=" + listaProdotti + '}';
+    }
+
+    public Prodotto getProdotto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

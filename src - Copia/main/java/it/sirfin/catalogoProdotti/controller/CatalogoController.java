@@ -6,7 +6,6 @@
 package it.sirfin.catalogoProdotti.controller;
 
 import it.sirfin.catalogoProdotti.dto.ListaProdottiDto;
-import it.sirfin.catalogoProdotti.dto.leggiCatalogoCompleto;
 import it.sirfin.catalogoProdotti.model.Prodotto;
 import it.sirfin.catalogoProdotti.service.CatalogoService;
 import java.util.List;
@@ -24,39 +23,22 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 @RestController
 public class CatalogoController {
-
     @Autowired
     CatalogoService catalogoService;
-
-  @RequestMapping("/leggiCatalogoCompleto")
+    
+     @RequestMapping("/leggi-catalogo")
     @ResponseBody
-    public ListaProdottiDto  leggiCatalogoCompleto() {
-        return new ListaProdottiDto(catalogoService.leggiCatalogoCompleto());
-    }
-
-    @RequestMapping("/inserisciArticolo")
-    @ResponseBody
-    public ListaProdottiDto inserisciArticolo(@RequestBody ListaProdottiDto dto) {
+    
+        public ListaProdottiDto inserisciContatto(@RequestBody leggiCatalogoCompleto dto) {
         // estraggo il contatto dal DTO
-        Prodotto p = dto.getProdotto;
+        Prodotto c = dto.getContatto();
         // inserisco il contatto su DB e ottengo il DB aggiornato
-        List<Prodotto> lista = catalogoService.inserisciArticolo(p);
+        List<Prodotto> lista = CatalogoService.inserisciContatto(c);
         // creo un nuovo DTO per la risposta
         ListaProdottiDto risp = new ListaProdottiDto(lista);
         // ritorno il DTO
         return risp;
     }
-
-    @RequestMapping("/cancellaProdotto")
-    @ResponseBody
-    public ListaProdottiDto cancellaProdotto(@RequestBody ListaProdottiDto dto) {
-        return new ListaProdottiDto(catalogoService.cancellaProdotto(dto.getProdotto()));
-    }
-
-    @RequestMapping("/svuota")
-    @ResponseBody
-    public ListaProdottiDto svuotaRubrica() {
-        return new ListaProdottiDto(catalogoService.svuotaCatalogo());
-    }
-
+    
+    
 }
