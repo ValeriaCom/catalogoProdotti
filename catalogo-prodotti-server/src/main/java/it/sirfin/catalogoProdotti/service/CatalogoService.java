@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface CatalogoService {
     
-     List<Prodotto> leggiCatalogoCompleto();
+    List<Prodotto> leggiCatalogoCompleto();
 
     List<Prodotto> inserisciArticolo(Prodotto p);
 

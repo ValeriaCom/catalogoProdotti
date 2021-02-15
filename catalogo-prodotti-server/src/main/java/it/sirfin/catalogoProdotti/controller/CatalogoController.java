@@ -6,6 +6,7 @@
 package it.sirfin.catalogoProdotti.controller;
 
 import it.sirfin.catalogoProdotti.dto.ListaProdottiDto;
+import it.sirfin.catalogoProdotti.dto.leggiCatalogoCompleto;
 import it.sirfin.catalogoProdotti.model.Prodotto;
 import it.sirfin.catalogoProdotti.service.CatalogoService;
 import java.util.List;
@@ -32,7 +33,7 @@ public class CatalogoController {
 
     public ListaProdottiDto inserisciArticolo(@RequestBody leggiCatalogoCompleto dto) {
         // estraggo il contatto dal DTO
-        Prodotto c = dto.getContatto();
+        Prodotto p = dto.getProdotto();
         // inserisco il contatto su DB e ottengo il DB aggiornato
         List<Prodotto> lista = CatalogoService.inserisciArticolo(p);
         // creo un nuovo DTO per la risposta

@@ -11,7 +11,7 @@ import it.sirfin.catalogoProdotti.model.Prodotto;
  *
  * @author marco
  */
-public class RichiestaProdottoDto {
+public class leggiCatalogoCompleto {
       private Prodotto prodotto;
 
     @Override
@@ -27,10 +27,10 @@ public class RichiestaProdottoDto {
         this.prodotto = prodotto;
     }
 
-    public RichiestaProdottoDto(Prodotto prodotto) {
+    public leggiCatalogoCompleto(Prodotto prodotto) {
         this.prodotto = prodotto;
     }
 
-    public RichiestaProdottoDto() {
+    public leggiCatalogoCompleto() {
     }
 }
