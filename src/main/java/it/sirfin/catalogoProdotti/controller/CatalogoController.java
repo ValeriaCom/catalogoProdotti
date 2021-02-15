@@ -33,7 +33,7 @@ public class CatalogoController {
         // estraggo il contatto dal DTO
         Prodotto c = dto.getContatto();
         // inserisco il contatto su DB e ottengo il DB aggiornato
-        List<Prodotto> lista = CatalogoService.inserisciContatto(c);
+        List<Prodotto> lista = CatalogoService.inserisciArticolo();
         // creo un nuovo DTO per la risposta
         ListaProdottiDto risp = new ListaProdottiDto(lista);
         // ritorno il DTO
