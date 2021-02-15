@@ -1,0 +1,18 @@
+
+Descrizione <input type="text" [(ngModel)]="prodotto.descrizione">
+Prezzo <input type="text" [(ngModel)]="prodotto.prezzo">
+<hr>
+<button (click)="aggiungi()">Aggiungi</button>
+<button (click)="aggiorna()">Aggiorna</button>
+<button (click)="svuota()">Svuota Catalogo</button>
+<table>
+  <tr *ngFor="let prodotto of prodotti">
+    <td>{{prodotto.id}}</td>
+    <td>{{prodotto.descrizione}}</td>
+    <td>{{prodotto.prezzo}}</td>
+    
+    <td>
+      <button (click)="cancella(prodotto)">X</button>
+    </td>
+  </tr>
+</table>
