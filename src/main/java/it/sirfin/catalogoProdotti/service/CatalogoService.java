@@ -5,10 +5,21 @@
  */
 package it.sirfin.catalogoProdotti.service;
 
+import it.sirfin.catalogoProdotti.model.Prodotto;
+import java.util.List;
+
 /**
  *
  * @author marco
  */
 public interface CatalogoService {
+    
+     List<Prodotto> leggiCatalogoCompleto();
+
+    List<Prodotto> inserisciArticolo(Prodotto p);
+
+    List<Prodotto> cancellaCatalogo(Prodotto p);
+    
+    List<Prodotto> svuotaCatalogo();
     
 }
