@@ -314,3 +314,23 @@ Action:
 
 Consider defining a bean of type 'it.sirfin.catalogoProdotti.service.CatalogoService' in your configuration.
 
+2021-02-16 09:45:21.078  WARN 4252 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'catalogoController': Unsatisfied dependency expressed through field 'catalogoService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'it.sirfin.catalogoProdotti.service.CatalogoService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-02-16 09:45:21.256 ERROR 4252 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field catalogoService in it.sirfin.catalogoProdotti.controller.CatalogoController required a bean of type 'it.sirfin.catalogoProdotti.service.CatalogoService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'it.sirfin.catalogoProdotti.service.CatalogoService' in your configuration.
+
+2021-02-16 09:47:22.991  WARN 3492 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
