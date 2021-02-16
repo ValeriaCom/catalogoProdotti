@@ -53,9 +53,9 @@ public class CatalogoController {
         return new ListaProdottiDto(catalogoService.cancellaProdotto(dto.getProdotto()));
     }
 
-    @RequestMapping("/svuota")
+    @RequestMapping("/svuotaCatalogo")
     @ResponseBody
-    public ListaProdottiDto svuotaRubrica() {
+    public ListaProdottiDto svuotaCatalogo() {
         return new ListaProdottiDto(catalogoService.svuotaCatalogo());
     }
 
