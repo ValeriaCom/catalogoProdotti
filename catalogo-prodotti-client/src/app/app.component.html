@@ -2,9 +2,9 @@
 Descrizione <input type="text" [(ngModel)]="prodotto.descrizione">
 Prezzo <input type="text" [(ngModel)]="prodotto.prezzo">
 <hr>
-<button (click)="aggiungi()">Aggiungi</button>
-<button (click)="aggiorna()">Aggiorna</button>
-<button (click)="svuota()">Svuota Catalogo</button>
+<button (click)="inserisciArticolo()">Aggiungi</button>
+<button (click)="leggiCatalogoCompleto()">Aggiorna</button>
+<button (click)="svuotaCatalogo()">Svuota Catalogo</button>
 <table>
   <tr *ngFor="let prodotto of prodotti">
     <td>{{prodotto.id}}</td>
@@ -12,7 +12,7 @@ Prezzo <input type="text" [(ngModel)]="prodotto.prezzo">
     <td>{{prodotto.prezzo}}</td>
     
     <td>
-      <button (click)="cancella(prodotto)">X</button>
+      <button (click)="cancellaProdotto(prodotto)">X</button>
     </td>
   </tr>
 </table>

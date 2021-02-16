@@ -17,10 +17,10 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {
     // carica i dati della rubrica all'avvio
-    this.aggiorna();
+    this.leggiCatalogoCompleto();
   }
 
-  aggiungi() {
+  inserisciArticolo() {
     // metto il contatto da inserire nel DTO
     let req = new RichiestaAServerDto();
     req.prodotto = this.prodotto;
@@ -36,7 +36,7 @@ export class AppComponent {
     this.prodotto = new Prodotto();
   }
 
-  aggiorna() {
+  leggiCatalogoCompleto() {
     // preparo la richiesta GET verso il server
     let ox: Observable<RispostaDaServerDto> = this.http
       .get<RispostaDaServerDto>(this.url + "leggi-rubrica");
@@ -46,7 +46,7 @@ export class AppComponent {
     });
   }
 
-  svuota() {
+  svuotaCatalogo() {
     // preparo la richiesta GET verso il server
     let ox: Observable<RispostaDaServerDto> = this.http
       .get<RispostaDaServerDto>(this.url + "svuota");
